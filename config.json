@@ -8,7 +8,7 @@
     },
     "inboundDetour": [
         {
-            "port": 8899,
+            "port": 10808,
             "protocol": "socks",
             "settings": {
                 "auth": "noauth",
