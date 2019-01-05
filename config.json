@@ -1,0 +1,51 @@
+{
+    "inbound": {
+        "port": 8888,
+        "protocol": "http",
+        "settings": {
+            "auth": "noauth"
+        }
+    },
+    "inboundDetour": [
+        {
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true
+            }
+        }
+    ],
+    "outbound": {
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [
+                {
+                    "address": "173.82.114.219",
+                    "port": 23619,
+                    "users": [
+                        {
+                            "id": "96e911eb-d251-68ac-cb28-e4ad3ef1d701",
+                            "alterId": 64
+                        }
+                    ]
+                }
+            ]
+        },
+        "streamSettings": {
+            "network": "mkcp",
+            "kcpSettings": {
+                "mtu": 1350,
+                "tti": 20,
+                "uplinkCapacity": 5,
+                "downlinkCapacity": 100,
+                "congestion": true,
+                "readBufferSize": 1,
+                "writeBufferSize": 1,
+                "header": {
+                    "type": "none"
+                }
+            }
+        }
+    }
+}
